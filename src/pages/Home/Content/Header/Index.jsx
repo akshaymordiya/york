@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 
 import Navbar from '../../../../components/Navbar';
 
@@ -7,104 +7,35 @@ import DocBox from '../../../../components/DocBox';
 
 import useBreakpoints from '../../../../hooks/useBreakpoints';
 
-const boxOnedefaultStyle = {
-  height: "135px",
-  position: {
-    bottom: "16%",
-    right: "calc(5% + 113px)"
-  }
+const boxOneHeight = {
+  xs: false,
+  sm: "120px",
+  md:"120px",
+  lg: "135px",
+  xl: "135px",
+  xxl: "155px"
 }
 
-const boxTwodefaultStyle = {
-  height: "125px",
-  position: {
-    bottom: "calc(16% + 200px)",
-    right: "5%"
-  }
+const boxTwoHeight = {
+  xs: false,
+  sm: "100px",
+  md:"100px",
+  lg: "125px",
+  xl: "125px",
+  xxl: "150px"
 }
 
 const Header = () => {
 
-  const breakpoints = useBreakpoints();
+  const [enableScrollAnimation, setEnableScrollAnimation ] = useState(false);
 
-  const {
-    xs, sm, md, lg, xl, xxl
-  } = breakpoints;
+  const breakpoints = useBreakpoints();
 
   const activeBreakpointKey = Object.keys(breakpoints).find(key => breakpoints[key]);
 
-  const docBoxStyle = useMemo(() => {
-    return {
-      boxOne: {
-        xs: {
-          height: false,
-          position: {
-            bottom: "16%",
-            right: "calc(5% + 113px)"
-          }
-        },
-        sm: {
-          height: "120px",
-          position: {
-            bottom: "16%",
-            right: "calc(5% + 113px)"
-          }
-        },
-        md: {
-          height: "120px",
-          position: {
-            bottom: "16%",
-            right: "calc(5% + 113px)"
-          }
-        },
-        lg: boxOnedefaultStyle,
-        xl: boxOnedefaultStyle,
-        xxl: {
-          height: "155px",
-          position: {
-            bottom: "16%",
-            right: "calc(5% + 113px)"
-          }
-        }
-      },
-      boxTwo: {
-        xs: {
-          height: false,
-          position: {
-            bottom: "calc(16% + 140px)",
-            right: "5%"
-          }
-        },
-        sm: {
-          height: "100px",
-          position: {
-            bottom: "calc(16% + 185px)",
-            right: "5%"
-          }
-        },
-        md: {
-          height: "100px",
-          position: {
-            bottom: "calc(16% + 185px)",
-            right: "5%"
-          }
-        },
-        lg: boxTwodefaultStyle,
-        xl: boxTwodefaultStyle,
-        xxl: {
-          height: "150px",
-          position: {
-            bottom: "calc(16% + 225px)",
-            right: "5%"
-          }
-        }
-      }
-    }
-  }, [xs,sm,md,lg,xl,xxl]);
+  const docBoxOneHeight = boxOneHeight[activeBreakpointKey || "lg"]
 
-  const docBoxOneActiveStyle = docBoxStyle.boxOne[activeBreakpointKey] || boxOnedefaultStyle
-
-  const docBoxTwoActiveStyle = docBoxStyle.boxTwo[activeBreakpointKey] || boxTwodefaultStyle
+  const docBoxTwoHeight = boxTwoHeight[activeBreakpointKey || "lg"]
 
   return (
     <div className={styles.hero}>
@@ -120,19 +51,23 @@ const Header = () => {
           coloredText='brand'
           textPosition='center'
           addSpaceBeforeColoredText
-          fixedHeight={docBoxTwoActiveStyle.height}
+          fixedHeight={docBoxTwoHeight}
         /> 
         <div className={styles.boxWrapper}>
           <DocBox 
             firstText='AI.'
             secondText='SaaS.'
             coloredText='Future'
-            fixedHeight={docBoxOneActiveStyle.height}
+            fixedHeight={docBoxOneHeight}
             textPosition='start'
           />
-          <div className={styles.scrollArrow}>
+          <div 
+            className={styles.scrollArrow}
+            onMouseEnter={(_) => setEnableScrollAnimation(true)}
+            onMouseLeave={(_) => setEnableScrollAnimation(false)}
+           >
             <img
-              className={styles.arrowIcon}
+              className={`${styles.arrowIcon} ${enableScrollAnimation ?  styles.animate : ""}`}
               alt=""
               src="/arrow.svg"
               data-animate-on-scroll

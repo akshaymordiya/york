@@ -14,7 +14,7 @@
   place-items: center;
   padding-top: 3rem;
   font-size: var(--font-size-41xl);
-  font-weight: 800;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -60,6 +60,13 @@
   background-color: var(--gray-white);
   width: 88px;
   height: auto;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+.scrollArrow:hover {
+  box-shadow: none;
 }
 
 @media screen and (width < 600px) {
@@ -68,7 +75,7 @@
   }
 
   .docBoxWrapper {
-    padding: 3rem 1rem;
+    padding: 8rem 1rem;
   }
 }
 
@@ -105,5 +112,44 @@
 
   .docBoxWrapper {
     padding: 13rem 10rem 13rem 10rem;
+  }
+}
+
+@keyframes bounce-top {
+  0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  to {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
