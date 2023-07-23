@@ -108,41 +108,38 @@ const Header = () => {
 
   return (
     <div className={styles.hero}>
-      <img
-        className={styles.backgroundIcon}
-        alt=""
-        src="/cleanshot-20230705-at-0100-1@2x.png"
-      />
       <Navbar />
       <div className={styles.heroText}>
         <p>More than technology.</p>
         <p>A mindset shift.</p>
       </div>
-      <div className={styles.scrollArrow}>
-        <img
-          className={styles.arrowIcon}
-          alt=""
-          src="/arrow.svg"
-          data-animate-on-scroll
-        />
+      <div className={styles.docBoxWrapper}>       
+        <DocBox 
+          firstText='Enhance'
+          secondText='your'
+          coloredText='brand'
+          textPosition='center'
+          addSpaceBeforeColoredText
+          fixedHeight={docBoxTwoActiveStyle.height}
+        /> 
+        <div className={styles.boxWrapper}>
+          <DocBox 
+            firstText='AI.'
+            secondText='SaaS.'
+            coloredText='Future'
+            fixedHeight={docBoxOneActiveStyle.height}
+            textPosition='start'
+          />
+          <div className={styles.scrollArrow}>
+            <img
+              className={styles.arrowIcon}
+              alt=""
+              src="/arrow.svg"
+              data-animate-on-scroll
+            />
+          </div>
+        </div>
       </div>
-      <DocBox 
-        firstText='AI.'
-        secondText='SaaS.'
-        coloredText='Future'
-        fixedHeight={docBoxOneActiveStyle.height}
-        textPosition='start'
-        position={docBoxOneActiveStyle.position}
-      />
-      <DocBox 
-        firstText='Enhance'
-        secondText='your'
-        coloredText='brand'
-        textPosition='center'
-        addSpaceBeforeColoredText
-        fixedHeight={docBoxTwoActiveStyle.height}
-        position={docBoxTwoActiveStyle.position}
-      />
     </div>
   )
 }

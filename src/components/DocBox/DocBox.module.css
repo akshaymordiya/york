@@ -1,5 +1,4 @@
 .docBoxContainer {
-  position: absolute;
   border-radius: var(--br-11xl);
   background-color: var(--gray-white);
   padding: 21px 20px;
@@ -52,7 +51,7 @@
   }
 
   .text {
-    font-size: var(--br-11xl);
+    font-size: 35px;
   }
 }
 
@@ -68,21 +67,22 @@
 
 @media screen and (1280px <= width < 2000px){
   .docBoxContainer {
-    padding: 21px 40px;
+    padding: 25px 25px 20px 16px;
   }
 
   .text {
-    font-size: 35px;
+    font-size: var(--font-size-21xl);
   }
 }
 
 @media screen and (width >= 2000px ) {
   .docBoxContainer {
-    padding: 21px 60px;
+    padding: 40px 60px;
+    width: auto;
   }
 
   .text {
-    font-size: var(--font-size-21xl);
+    font-size: var(--font-size-31xl);
   }
 }
 

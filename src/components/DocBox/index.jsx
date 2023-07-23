@@ -9,13 +9,7 @@ const DocBox = ({
   addSpaceBeforeColoredText = false,
   textPosition = "center",
   fixedHeight = false,
-  position = {}
 }) => {
-
-  const boxPosition = Object.keys(position).reduce((acc, key) => ({
-    ...acc,
-    [key]: position[key]
-  }), {});
 
   return (
     <div
@@ -24,7 +18,6 @@ const DocBox = ({
         ...(fixedHeight && {
           height: fixedHeight
         }),
-        ...boxPosition
       }}
     >
       <p className={styles.text}></p>
