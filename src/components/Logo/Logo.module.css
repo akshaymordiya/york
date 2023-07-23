@@ -1,0 +1,11 @@
+.yokrLogoIcon {
+  width: 87px;
+  height: 31px;
+}
+
+@media screen and (width < 600px) {
+  .yokrLogoIcon {
+    width: 77px;
+    height: 21px;
+  }
+}

@@ -1,0 +1,88 @@
+.docBoxContainer {
+  position: absolute;
+  border-radius: var(--br-11xl);
+  background-color: var(--gray-white);
+  padding: 21px 20px;
+  width: 254px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.docBoxContainer.center {
+  justify-content: Center;
+}
+
+.docBoxContainer.start {
+  justify-content: flex-start;
+}
+
+.docBoxContainer.end {
+  justify-content: flex-end;
+}
+
+.text {
+  margin: 0;
+  font-weight: bold;
+}
+
+.text > span {
+  color: var(--color-blue);
+}
+
+.text.space > span {
+  margin-left: 8px;
+}
+
+@media screen and (width < 600px){
+  .docBoxContainer {
+    width: fit-content;
+    padding: 21px 40px;
+  }
+
+  .text {
+    font-size: var(--br-11xl);
+  }
+}
+
+@media screen and (600px <= width < 960px){
+  .docBoxContainer {
+    padding: 21px 40px;
+  }
+
+  .text {
+    font-size: var(--br-11xl);
+  }
+}
+
+@media screen and (960px <= width < 1280px){
+  .docBoxContainer {
+    padding: 21px 40px;
+  }
+
+  .text {
+    font-size: 35px;
+  }
+}
+
+@media screen and (1280px <= width < 2000px){
+  .docBoxContainer {
+    padding: 21px 40px;
+  }
+
+  .text {
+    font-size: 35px;
+  }
+}
+
+@media screen and (width >= 2000px ) {
+  .docBoxContainer {
+    padding: 21px 60px;
+  }
+
+  .text {
+    font-size: var(--font-size-21xl);
+  }
+}
+

@@ -1,0 +1,43 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.4rem;
+}
+
+.menu {
+  border-radius: 40px;
+  background-color: var(--gray-white);
+  width: fit-content;
+  padding: 0 5rem;
+  height: 70px;
+  font-size: var(--font-size-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menuItem {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.menuItem:hover {
+  color: var(--color-blue);
+}
+
+.space { 
+  width: 87px;
+}
+
+@media screen and (width < 600px) {
+  .navbarContainer {
+    justify-content: center;
+  }
+
+  .menuIcon {
+    cursor: pointer;
+  }
+}

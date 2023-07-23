@@ -5,6 +5,9 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+
+import Home from "./pages/Home";
+
 import Try2UpdateOriginal from "./pages/Try2UpdateOriginal";
 
 function App() {
@@ -45,7 +48,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Try2UpdateOriginal />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 }

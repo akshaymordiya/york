@@ -44,3 +44,18 @@ body {
   /* border radiuses */
   --br-11xl: 30px;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+  ::-webkit-scrollbar-track {
+  background: transparent; 
+}
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius:10px;
+    transition: 0.3s all ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} 
