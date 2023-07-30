@@ -8,7 +8,7 @@ import {
 
 import Home from "./pages/Home";
 
-import Try2UpdateOriginal from "./pages/Try2UpdateOriginal";
+import BreakpointProvider from "./context/breakpoint";
 
 function App() {
   const action = useNavigationType();
@@ -47,9 +47,11 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <BreakpointProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BreakpointProvider>
   );
 }
 export default App;

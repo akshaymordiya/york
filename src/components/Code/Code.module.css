@@ -1,0 +1,36 @@
+.codeEditor {
+  background-color: var(--color-black);
+  color: var(--gray-white);
+  margin: 20px 0;
+  font-family: var(--font-lato) !important;
+  font-size: 15px;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 21px;
+}
+
+.pink {
+  color: var(--color-deeppink);
+}
+
+.green {
+  color: var(--color-yellowgreen);
+}
+
+.yellow {
+  color: var(--color-khaki);
+}
+
+@media screen and (1840px <= width < 2000px) {
+  .codeEditor {
+    font-size: var(--font-size-xl);
+    line-height: 26px;
+  }
+}
+
+@media screen and (width >= 2000px) {
+  .codeEditor {
+    font-size: var(--br-11xl);
+    line-height: 36px;
+  }
+}

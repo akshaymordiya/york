@@ -9,3 +9,10 @@
     height: 21px;
   }
 }
+
+@media screen and (1840px <= width < 2000px) {
+  .yokrLogoIcon {
+    width: 100px;
+    height: 44px;
+  }
+}

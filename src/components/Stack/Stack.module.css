@@ -1,0 +1,35 @@
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: calc(100% - 2rem);
+  gap: 1rem;
+}
+
+.startX {
+  justify-content: flex-start;
+}
+
+.spaceBX {
+  justify-content: space-between;
+}
+
+.endX {
+  justify-content: flex-end;
+}
+
+.startY {
+  align-items: flex-start;
+}
+
+.endY {
+  align-items: flex-end;
+}
+
+.centerX {
+  justify-content: center;
+}
+
+.centerY {
+  align-items: center;
+}

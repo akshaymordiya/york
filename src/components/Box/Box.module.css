@@ -1,0 +1,12 @@
+.container {
+  height: auto;
+  padding: var(--padding-base);
+  overflow: hidden;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gray);
+  box-shadow: 0 2px 30px 20px rgba(0, 0, 0, 0.05);
+}
+
+.gridBox {
+  display: grid;
+}

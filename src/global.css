@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 body {
   margin: 0;
@@ -11,6 +11,9 @@ body {
   /* font sizes */
   --font-size-sm: 14px;
   --font-size-41xl: 60px;
+  --font-size-51xl: 70px;
+  --font-size-61xl: 80px;
+  --font-size-71xl: 90px;
   --font-size-31xl: 50px;
   --font-size-xl: 20px;
   --font-size-21xl: 40px;
@@ -44,6 +47,10 @@ body {
 
   /* border radiuses */
   --br-11xl: 30px;
+}
+
+code {
+  font-family: var(--font-lato);
 }
 
 ::-webkit-scrollbar {

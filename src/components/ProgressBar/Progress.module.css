@@ -1,0 +1,135 @@
+.container {
+  min-width: 250px;
+  min-height: 250px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.textBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.textBox > p {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.textBox > p > span {
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+.textBox > span {
+  font-size: 10px;
+  color: var(--gray-500);
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.textBox > span:not(:last-child){
+  margin-top: 0.4rem;
+}
+
+.checkMarkBox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--gray-white);
+  padding: 4px;
+  position: absolute;
+  top: 44%;
+  scale: 0;
+  left: 4.8%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.greenBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--color-yellowgreen);
+  position: relative;
+}
+
+.greenBox > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+}
+
+
+.topDotBox {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #E4E4E8;
+  padding: 2.2px;
+  top: 5.2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.bgWhite {
+  width: 26px;
+  height: 26px;
+  background-color: var(--gray-white);
+  transform: translateX(-44%);
+  top: 4.9%;
+  z-index: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dotOne {
+  position: absolute;
+  top: 21%;
+  left: 77%;
+  scale: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.dotTwo {
+  position: absolute;
+  top: 85.2%;
+  left: 56%;
+  background-color: rgba(0, 0, 0, 0.4);
+  scale: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.completed {
+  scale: 1;
+}
+

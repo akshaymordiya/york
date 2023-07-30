@@ -1,0 +1,45 @@
+.ulContainer{
+  width: fit-content;
+  list-style: none;
+  text-align: start;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  font-size: var(--font-size-base);
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  color: var(--color-blue);
+}
+
+.listItem:not(:last-child){
+  padding-bottom: 2.5rem;
+}
+
+.listItem:first-child {
+  font-weight: bold;
+  color: var(--gray-500);
+}
+
+@media screen and (width < 600px) {
+  .ulContainer {
+    text-align: center;
+  }
+}
+
+@media screen and (1840px <= width < 2000px) {
+  .listItem {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media screen and (width >= 2000px) {
+  .listItem {
+    font-size: var(--br-11xl);
+  }
+}

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const breakpoints = {
   xs: 0,
@@ -27,7 +27,6 @@ const useBreakpoints = () => {
       for (let i = breakpointKeys.length - 1; i >= 0; i--) {
         const breakpoint = breakpointKeys[i];
   
-  
         const breakpointWidth = breakpoints[breakpoint];
         if (windowWidth >= breakpointWidth) {
           setBreakpointValues(prev => ({
@@ -50,7 +49,14 @@ const useBreakpoints = () => {
     };
   }, []);
 
-  return breakpointValues
+  const activeBreakPoint = useMemo(() => {
+    return Object.keys(breakpointValues).find(key => breakpointValues[key]);
+  }, [breakpointValues]);
+
+  return {
+    breakpointValues,
+    activeBreakPoint
+  }
 }
 
 export default useBreakpoints;

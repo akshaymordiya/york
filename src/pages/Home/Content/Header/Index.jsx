@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, Suspense, useRef, Fragment } from 'react';
+
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 import Navbar from '../../../../components/Navbar';
 
 import styles from "./Header.module.css";
 import DocBox from '../../../../components/DocBox';
 
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { BreakpointContext } from '../../../../context/breakpoint';
 
 const boxOneHeight = {
   xs: false,
@@ -25,20 +27,44 @@ const boxTwoHeight = {
   xxl: "150px"
 }
 
-const Header = () => {
+const Header = ({
+  onScrollClick = () => {},
+  enableSplineAnimation= false
+}) => {
 
-  const [enableScrollAnimation, setEnableScrollAnimation ] = useState(false);
+  const fallbackRef = useRef(null);
+  const splineRef = useRef(null);
 
-  const breakpoints = useBreakpoints();
-
-  const activeBreakpointKey = Object.keys(breakpoints).find(key => breakpoints[key]);
+  const {activeBreakPoint: activeBreakpointKey} = useContext(BreakpointContext);
 
   const docBoxOneHeight = boxOneHeight[activeBreakpointKey || "lg"]
 
   const docBoxTwoHeight = boxTwoHeight[activeBreakpointKey || "lg"]
 
+  function onSplineLoad(){
+    fallbackRef.current.style.display = "none";
+    splineRef.current.style.display = "block"
+  }
+
   return (
     <div className={styles.hero}>
+      {!enableSplineAnimation ? (
+        <div ref={fallbackRef} className={styles.fallbackBG}></div>
+        ) : (
+        <Fragment>
+          <div ref={fallbackRef} className={styles.coloredBg}></div>
+          <Suspense fallback={(
+            <div className={styles.fallbackBG}></div>
+          )}>
+            <Spline 
+            scene='https://prod.spline.design/xqt0oS7OvIXx8l4h/scene.splinecode'
+            className={styles.spline}
+            onLoad={onSplineLoad}
+            ref={splineRef}
+            ></Spline>
+          </Suspense>
+        </Fragment>
+      )}
       <Navbar />
       <div className={styles.heroText}>
         <p>More than technology.</p>
@@ -63,15 +89,11 @@ const Header = () => {
           />
           <div 
             className={styles.scrollArrow}
-            onMouseEnter={(_) => setEnableScrollAnimation(true)}
-            onMouseLeave={(_) => setEnableScrollAnimation(false)}
+            onClick={onScrollClick}
            >
-            <img
-              className={`${styles.arrowIcon} ${enableScrollAnimation ?  styles.animate : ""}`}
-              alt=""
-              src="/arrow.svg"
-              data-animate-on-scroll
-            />
+            <div className={styles.chevron}></div>
+            <div className={styles.chevron}></div>
+            <div className={styles.chevron}></div>
           </div>
         </div>
       </div>
