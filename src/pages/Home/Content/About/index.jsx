@@ -19,13 +19,12 @@ const bottomText = 'End';
 const ImageWrapper = ({
   style,
   src,
-  isVisible,
   children = null,
 }) => {
 
   return (
     <Box
-      extendStyles={`${style} ${isVisible ? styles.slide : ""}`}
+      extendStyles={`${style}`}
       isGridBox
     > 
       <Stack 
@@ -240,8 +239,7 @@ const About = forwardRef(function About(props, ref){
             style={styles.matrixBackground}
           >
             <ProgressCircle
-              progress={72}
-              fixAmount={1180.72}
+              progress={74}
             />
           </Image>
         </Grid.Item>

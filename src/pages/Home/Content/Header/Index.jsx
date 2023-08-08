@@ -1,4 +1,5 @@
 import React, { useContext, Suspense, useRef, Fragment } from 'react';
+import ReactPlayer from 'react-player';
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -48,7 +49,8 @@ const Header = ({
 
   return (
     <div className={styles.hero}>
-      {!enableSplineAnimation ? (
+      <ReactPlayer playbackRate={0.5} width={'100%'} height={'100%'} className={styles.videoBg} playing muted loop url="/bg3.mp4" />
+      {/* {!enableSplineAnimation ? (
         <div ref={fallbackRef} className={styles.fallbackBG}></div>
         ) : (
         <Fragment>
@@ -64,7 +66,7 @@ const Header = ({
             ></Spline>
           </Suspense>
         </Fragment>
-      )}
+      )} */}
       <Navbar />
       <div className={styles.heroText}>
         <p>More than technology.</p>

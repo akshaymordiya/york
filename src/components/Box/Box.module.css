@@ -10,3 +10,9 @@
 .gridBox {
   display: grid;
 }
+
+@media screen and (width >= 1840px) {
+  .container {
+    padding: var(--padding-12xl);
+  }
+}

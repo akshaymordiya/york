@@ -6,25 +6,14 @@ import styles from "./Progress.module.css";
 
 const loadingDuration = 3000
 
-const formateNumber = (number) => {
-  /* since we are using static data here this logic may not return accurate result each times */
-  const split = String(number).split(".");
-  const flotValues = split[1].split('');
-  const twoDigits = flotValues.slice(0, 2);
-  const text = split[0] + '.' + twoDigits.join('');
-  return parseFloat(text); 
-}
-
 const ProgressCircle = ({
   progress,
   gradientColors = ['#9AED5C', '#78E25B', '#57DA5F', '#34C96A', '#1DBD73'],
   trailColor = '#E4E4E8',
   isVisible,
-  fixAmount
 }) => {
 
   const [animatedProgress, setAnimatedProgress] = useState(0);
-  const [amount, setAmount] = useState(0);
 
   const isAnimationCompleted = useMemo(() => {
     return animatedProgress >= progress
@@ -32,14 +21,11 @@ const ProgressCircle = ({
 
   useEffect(() => {
     let loadingTimeout;
-    const amountInterval = (fixAmount / progress) * 2;
     if(isVisible){
       if(animatedProgress <= progress) {
         loadingTimeout = setTimeout(() => {
-          setAnimatedProgress(animatedProgress + 2)
-          const sum = amount + amountInterval
-          setAmount(formateNumber(sum))
-        }, loadingDuration/100)
+          setAnimatedProgress(animatedProgress + 1)
+        }, loadingDuration/150)
       }
       
       return () => {
@@ -47,7 +33,6 @@ const ProgressCircle = ({
       }
     } else {
       setAnimatedProgress(0)
-      setAmount(0)
     }
   }, [isVisible, animatedProgress]);
 
@@ -120,17 +105,16 @@ const ProgressCircle = ({
       </svg>
 
       {/* Texts */}
-
-     
       <div
         className={styles.textBox}
       >
-        <p>
-          <span>$</span>
-          {amount}
+        <p className={isAnimationCompleted ? styles.fontSize : ""}>
+          {animatedProgress}
+          <span>%</span>
         </p>
-        <span>Card Balance: <b>$1682.55</b></span>
-        <span>No Interest charges</span>
+        {!isAnimationCompleted && (
+          <span><b>Loading</b></span>
+        )}
       </div>
       <div className={`${styles.checkMarkBox} ${isAnimationCompleted ? styles.completed : ""}`}>
         <div className={styles.greenBox}>
