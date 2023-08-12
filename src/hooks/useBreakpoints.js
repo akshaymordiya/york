@@ -18,10 +18,12 @@ const useBreakpoints = () => {
   }), {});
 
   const [breakpointValues, setBreakpointValues] = useState(values);
+  const [clientX, setClientX] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
+      setClientX(windowWidth);
       const breakpointKeys = Object.keys(breakpoints);
   
       for (let i = breakpointKeys.length - 1; i >= 0; i--) {
@@ -55,7 +57,8 @@ const useBreakpoints = () => {
 
   return {
     breakpointValues,
-    activeBreakPoint
+    activeBreakPoint,
+    clientX
   }
 }
 

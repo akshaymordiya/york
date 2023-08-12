@@ -1,18 +1,23 @@
 import React, { forwardRef } from 'react';
 
 import styles from "./SectionIntroBox.module.css";
+import Intro from '../Intro';
 
 const SectionIntroBox = forwardRef(function SectionIntroBox({
   title,
   subTitle,
+  extendStyle,
+  extendWrapperStyle,
   children
 }, ref) {
   return (
-    <section className={styles.container}>
-      <div ref={ref} className={styles.introBox}>
-        <h3>{title}</h3>
-        <h4>{subTitle}</h4>
-      </div>
+    <section className={`${styles.container} ${extendStyle}`}>
+      <Intro 
+        ref={ref}
+        title={title}
+        subTitle={subTitle}
+        extendWrapperStyle={extendWrapperStyle}
+      />
       <div className={styles.data}>
         {children}
       </div>

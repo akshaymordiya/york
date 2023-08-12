@@ -1,0 +1,98 @@
+.introBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 7rem;
+}
+
+.title,
+.subTitle {
+  margin: 0;
+}
+
+.title {
+  font-size: var(--font-size-41xl);
+}
+
+.subTitle {
+  font-size: var(--font-size-31xl);
+  color: var(--color-dimgray);
+  font-weight: 400;
+}
+
+@media screen and (width < 600px) {
+  .introBox {
+    gap: 0.6rem;
+  }
+
+  .title {
+    font-size: var(--font-size-21xl);
+  }
+  
+  .subTitle {
+    font-size: var(--br-11xl);
+  }
+}
+
+@media screen and (600px <= width < 960px) {
+  .introBox {
+    gap: 0.6rem;
+  }
+
+  .title {
+    font-size: var(--font-size-31xl);
+  }
+  
+  .subTitle {
+    font-size: var(--font-size-21xl);
+  }
+}
+
+
+@media screen and (960px <= width < 1280px) { 
+  .introBox {
+    gap: 0.6rem;
+    margin-bottom: 8rem;
+  }
+
+  .title {
+    font-size: var(--font-size-41xl);
+  }
+  
+  .subTitle {
+    font-size: var(--font-size-31xl);
+  }
+}
+
+@media screen and (1840px <= width < 2000px) {
+  .introBox {
+    gap: 1rem;
+    margin-bottom: 13rem;
+  }
+
+  .title {
+    font-size: var(--font-size-71xl);
+  }
+  
+  .subTitle {
+    font-size: var(--font-size-51xl);
+  }
+}
+
+@media screen and (width >= 2000px) {  
+  .introBox {
+    gap: 1rem;
+    margin-bottom: 13rem;
+  }
+
+  .title {
+    font-size: var(--font-size-71xl);
+  }
+  
+  .subTitle {
+    font-size: var(--font-size-51xl);
+  }
+}

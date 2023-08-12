@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import Logo from '../Logo';
 import Drawer from '../Drawer';
@@ -7,11 +8,30 @@ import styles from "./Navbar.module.css";
 
 import { BreakpointContext } from '../../context/breakpoint';
 
-const Menu = () => (
+const menus = [
+  {
+    title: "Projects",
+    route: "/projects"
+  },
+  {
+    title: "About us",
+    route: "/about-us"
+  },
+  {
+    title: "Contact",
+    route: "/contact"
+  }
+]
+
+const Menu = ({
+  activeLink
+}) => (
   <Fragment>
-    <p className={styles.menuItem}>Projects</p>
-    <p className={styles.menuItem}>About us</p>
-    <p className={styles.menuItem}>Contact</p>
+    {menus.map(menu => (
+      <Link key={menu.title} to={menu.route} className={`${styles.menuItem} ${menu.route === activeLink ? styles.active : ""}`}>
+        {menu.title}
+      </Link>
+    ))}
   </Fragment>
 )
 
@@ -23,7 +43,7 @@ const Navbar = () => {
       xs
     }
   } = useContext(BreakpointContext);
-
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => setOpen(open => !open);
@@ -33,11 +53,15 @@ const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       {!isMobile && (
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       )}
       <div className={styles.menu}>
         {isMobile && (
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         )}
         {xs ? (
           <Fragment>
@@ -51,10 +75,10 @@ const Navbar = () => {
               onClose={toggleDrawer}
               bottomText={<Logo />}
             >
-              <Menu />
+              <Menu activeLink={pathname} />
             </Drawer>
           </Fragment>
-        ) : <Menu />}
+        ) : <Menu activeLink={pathname} />}
           
       </div>
       {!isMobile && (

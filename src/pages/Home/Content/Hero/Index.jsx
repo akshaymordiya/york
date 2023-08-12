@@ -4,9 +4,10 @@ import ReactPlayer from 'react-player';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 import Navbar from '../../../../components/Navbar';
-
-import styles from "./Header.module.css";
 import DocBox from '../../../../components/DocBox';
+import CommonHeader from '../../../../components/Header';
+
+import styles from "./Hero.module.css";
 
 import { BreakpointContext } from '../../../../context/breakpoint';
 
@@ -36,7 +37,7 @@ const Header = ({
   const fallbackRef = useRef(null);
   const splineRef = useRef(null);
 
-  const {activeBreakPoint: activeBreakpointKey} = useContext(BreakpointContext);
+  const {activeBreakPoint: activeBreakpointKey } = useContext(BreakpointContext);
 
   const docBoxOneHeight = boxOneHeight[activeBreakpointKey || "lg"]
 
@@ -48,8 +49,8 @@ const Header = ({
   }
 
   return (
-    <div className={styles.hero}>
-      <ReactPlayer playbackRate={0.5} width={'100%'} height={'100%'} className={styles.videoBg} playing muted loop url="/bg3.mp4" />
+    <CommonHeader>
+      <ReactPlayer playbackRate={0.5} className={styles.videoBg} playing muted loop url="/bg3.mp4" />
       {/* {!enableSplineAnimation ? (
         <div ref={fallbackRef} className={styles.fallbackBG}></div>
         ) : (
@@ -67,7 +68,6 @@ const Header = ({
           </Suspense>
         </Fragment>
       )} */}
-      <Navbar />
       <div className={styles.heroText}>
         <p>More than technology.</p>
         <p>A mindset shift.</p>
@@ -99,7 +99,7 @@ const Header = ({
           </div>
         </div>
       </div>
-    </div>
+    </CommonHeader>
   )
 }
 

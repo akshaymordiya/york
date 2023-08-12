@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+  padding: 5px;
+  width: calc(100vw - 15px);
+  max-width: calc(100vw - 15px);
+  overflow: hidden;
+  height: fit-content;
+  min-height: 100vh;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-black);
+  font-family: var(--font-lato);
+  background-color: #FFF;
+}

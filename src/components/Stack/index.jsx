@@ -8,6 +8,7 @@ const cssIdentifier = {
 
 const Stack = ({
   children,
+  extendStyle = "",
   ...props
 }) => {
 
@@ -25,7 +26,7 @@ const Stack = ({
   } = props
 
   return (
-    <div className={`${styles.flexContainer} ${styles[positionX]} ${styles[positionY]}`} style={style}>
+    <div className={`${styles.flexContainer} ${styles[positionX]} ${styles[positionY]} ${extendStyle}`} style={style}>
       {children}
     </div>
   )

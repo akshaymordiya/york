@@ -1,0 +1,11 @@
+.button {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: var(--font-size-base);
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  background-color: var(--gray-white);
+  font-weight: 600;
+}

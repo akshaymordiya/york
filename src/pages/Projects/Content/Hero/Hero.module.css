@@ -1,0 +1,83 @@
+.gridBox {
+  padding: 3rem 8rem;
+  width: calc(100% - 16rem);
+}
+
+.box {
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.05);
+  padding: 1.4rem;
+}
+
+.noGutters {
+  padding: 0;
+  position: relative;
+}
+
+.discoverBtn {
+  background-color: rgba(252, 244, 231, 1) !important;
+  color: var(--color-black);
+}
+
+.discoverBtn > span {
+  color: rgba(178, 102, 249, 1);
+}
+
+.comigSoonBtn {
+  background-color: rgba(244, 251, 254, 1)!important;
+  color: var(--color-black);
+}
+
+.comigSoonBtn > span {
+  color: rgba(54, 54, 202, 1);
+}
+
+@media screen and (width < 600px) {
+  .gridBox {
+    padding: 3rem 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
+  .noGutters {
+    min-height: 450px !important;
+  }
+
+  .box {
+    min-height: 50px;
+  }
+}
+
+@media screen and (600px <= width < 960px) {
+  .gridBox {
+    padding: 3rem 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
+  .noGutters {
+    min-height: 530px;
+  }
+}
+
+@media screen and (960px <= width < 1280px ) {
+  .gridBox {
+    padding: 3rem 2rem;
+    width: calc(100% - 4rem);
+  }
+}
+
+@media screen and (1280px <= width < 2000px ) {
+  .gridBox {
+    padding: 6rem 10rem;
+    width: calc(100% - 20rem);
+  }
+}
+
+@media screen and (width >= 2000px ) {
+  .gridBox {
+    padding: 7rem 16rem;
+    width: calc(100% - 32rem);
+  }
+
+  .noGutters {
+    min-height: 800px;
+  }
+}

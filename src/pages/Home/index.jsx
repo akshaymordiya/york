@@ -2,7 +2,7 @@ import React, { Fragment, useRef } from 'react'
 
 import styles from "./Home.module.css";
 
-import Header from './Content/Header/Index';
+import Hero from './Content/Hero/Index';
 import About from './Content/About';
 import Language from './Content/Language';
 import Footer from '../../components/Footer';
@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <Header onScrollClick={handleScrollClick} />
+      <Hero onScrollClick={handleScrollClick} />
       <About ref={aboutSectionRef} />
       <TextParallex text={(
         <Fragment>

@@ -1,0 +1,102 @@
+.textWrapper {
+  justify-content: flex-start;  
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
+.removeXGutter {
+  padding: 0;
+}
+
+.noGutters {
+  padding: 0;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin-bottom: 0.1rem;
+  font-weight: 800;
+  text-align: end;
+}
+
+.subTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: end;
+}
+
+.stack {
+  width: 100%;
+}
+
+.button {
+  margin-left: auto;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-width: 160px;
+  max-height: 160px;
+}
+
+@media screen and (width < 600px) {
+  .title {
+    font-size:1.8rem;
+  }
+  
+  .subTitle {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (600px <= width < 960px) {
+  .title {
+    font-size:1.6rem;
+  }
+  
+  .subTitle {
+    font-size: 1.3rem;
+  }
+
+  .button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen and (960px <= width < 1280px ) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen and (width >= 2000px ) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .subTitle {
+    font-size: 2.9rem;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .button {
+    padding: 1.3rem 2.5rem;
+  }
+}

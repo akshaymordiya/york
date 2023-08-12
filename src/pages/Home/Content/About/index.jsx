@@ -58,7 +58,7 @@ const About = forwardRef(function About(props, ref){
       ref={ref}
     >
       <Grid noGutters gap={isDesktop ? '1.5rem' : '0.8rem'}>
-        <Grid.Item 
+        <Grid.Item
           clg="1 / span 6"
           cmd="1 / span 6"
           csm="1 / span 6"

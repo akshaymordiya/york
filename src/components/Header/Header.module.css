@@ -1,0 +1,13 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  border-radius: var(--br-11xl);
+  background-color: #C0C7C5;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.removeBg {
+  background-color: transparent;
+}

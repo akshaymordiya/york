@@ -9,13 +9,22 @@
   padding-top: 2rem;
   transform: translateX(100%);
   transition: 0.4s all ease-in-out;
-  background-color: var(--gray-white);
+  background-color: var(--gray-300);
   box-shadow: 0 2px 30px 20px rgba(0, 0, 0, 0.05);
-  border-radius: var(--br-11xl) 0 0 var(--br-11xl);
+  overflow: hidden;
+  font-family: var(--font-lato);
 }
 
 .open {
   transform: translateX(0px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
 }
 
 .cross {
